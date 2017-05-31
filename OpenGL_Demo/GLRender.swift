@@ -43,10 +43,10 @@ let vertexShaderSources_3 =
 "attribute vec3 position;" +
 "attribute vec3 color;" +
 "attribute vec2 texcoord;" +
-"varying vec2 texcoordOut;" +
+//"varying vec2 texcoordOut;" +
 "varying vec3 colorOut;" +
 "void main() {" +
-"   texcoordOut = texcoord;" +
+//"   texcoordOut = texcoord;" +
 "   colorOut = color;" +
 "  gl_Position = vec4(position, 1.0);" +
 "}"
@@ -54,14 +54,15 @@ let vertexShaderSources_3 =
 let fragmentShaderSources_3 =
 "precision mediump float;" +
 "varying vec3 colorOut;" +
-"varying vec2 texcoordOut;" +
+//"varying vec2 texcoordOut;" +
+"uniform vec2 texcoordOut;" +
 "uniform sampler2D ourTexture;" +
 "void main() {" +
-//"   vec4 mask = texture2D(ourTexture, texcoordOut);" +
-//"   gl_FragColor = vec4(mask.rgb, 1.0);" +
-"   vec4 m = texture2D(ourTexture, texcoordOut);" +
-"   vec4 c = mix(m, vec4(colorOut, 1), 0.4);" +
-"   gl_FragColor = c;" +
+"   vec4 mask = texture2D(ourTexture, texcoordOut);" +
+"   gl_FragColor = vec4(mask.rgb, 1.0);" +
+//"   vec4 m = texture2D(ourTexture, texcoordOut);" +
+//"   vec4 c = mix(m, vec4(colorOut, 1), 0.4);" +
+//"   gl_FragColor = c;" +
 "}"
 
 
@@ -143,7 +144,7 @@ struct GLRender {
             glBindAttribLocation(self.program, 4, ("color" as NSString).utf8String)
         case .graphic4:
             glBindAttribLocation(self.program, 4, ("color" as NSString).utf8String)
-            glBindAttribLocation(self.program, 5, ("texcoord" as NSString).utf8String)
+//            glBindAttribLocation(self.program, 5, ("texcoord" as NSString).utf8String)
         }
         
         glLinkProgram(self.program)
@@ -176,7 +177,6 @@ struct GLRender {
         
         let positionLocaltion: GLuint = 3
         let colorLocation: GLuint = 4
-        let textCoorLocation: GLuint = 5
         
         switch drawType {
         case .graphic1:
@@ -240,7 +240,9 @@ struct GLRender {
             glTexParameteri(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_T), GL_CLAMP_TO_EDGE)
             
             glActiveTexture(GLenum(GL_TEXTURE0))
-            glUniform1i(GLint(textCoorLocation), 0)
+            
+            let textureIndex = glGetUniformLocation(self.program, ("ourTexture" as NSString).utf8String)
+            glUniform1i(textureIndex, 0)
             
             setupTexture("testSources")
             
@@ -269,8 +271,13 @@ struct GLRender {
             glVertexAttribPointer(colorLocation, 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 0, colors)
             glEnableVertexAttribArray(colorLocation)
             
-            glVertexAttribPointer(textCoorLocation, 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 0, texCoords)
-            glEnableVertexAttribArray(textCoorLocation)
+//            let textCoorLocation: GLuint = 5
+//            glVertexAttribPointer(textCoorLocation, 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 0, texCoords)
+//            glEnableVertexAttribArray(textCoorLocation)
+            
+            let texcoordUniformLocation = glGetUniformLocation(self.program, ("texcoordOut" as NSString).utf8String)
+            glUniform2fv(texcoordUniformLocation, GLsizei(texCoords.count), texCoords)
+            assert(texcoordUniformLocation >= 0)
             
             let indices:[GLubyte] =
                 [0, 1, 2,

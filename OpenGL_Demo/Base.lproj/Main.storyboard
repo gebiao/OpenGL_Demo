@@ -60,7 +60,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUK-Zv-r2X">
                                 <rect key="frame" x="0.0" y="637" width="375" height="30"/>
-                                <state key="normal" title="Swift-Render"/>
+                                <state key="normal" title="Switch to SwiftRender"/>
                                 <connections>
                                     <action selector="switchOcRender:" destination="jOj-2V-qpu" eventType="touchUpInside" id="ouU-DF-51y"/>
                                     <segue destination="jOj-2V-qpu" kind="presentation" id="l3K-gU-bAX"/>
@@ -123,19 +123,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLj-rh-pil">
-                                <rect key="frame" x="198" y="607" width="45" height="30"/>
+                                <rect key="frame" x="188" y="605" width="45" height="30"/>
                                 <state key="normal" title="Draw3"/>
                                 <connections>
                                     <action selector="drawFrame:" destination="jOj-2V-qpu" eventType="touchUpInside" id="KEH-Dh-37i"/>
                                     <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XNw-rL-xqd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ8-sw-kvJ">
-                                <rect key="frame" x="266" y="605" width="45" height="30"/>
-                                <state key="normal" title="Draw4"/>
-                                <connections>
-                                    <action selector="drawFrame:" destination="jOj-2V-qpu" eventType="touchUpInside" id="Uhe-mY-T5W"/>
-                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="08Z-sQ-gXw"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUh-uz-gp2" customClass="GLView" customModule="OpenGL_Demo" customModuleProvider="target">
@@ -144,9 +136,17 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lic-31-Msz">
                                 <rect key="frame" x="0.0" y="637" width="375" height="30"/>
-                                <state key="normal" title="OC-Render"/>
+                                <state key="normal" title="Switch to OCRender"/>
                                 <connections>
                                     <action selector="switchOcRender:" destination="jOj-2V-qpu" eventType="touchUpInside" id="taC-oq-HkR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ8-sw-kvJ">
+                                <rect key="frame" x="249" y="605" width="45" height="30"/>
+                                <state key="normal" title="Draw4"/>
+                                <connections>
+                                    <action selector="drawFrame:" destination="jOj-2V-qpu" eventType="touchUpInside" id="Uhe-mY-T5W"/>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="08Z-sQ-gXw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -159,13 +159,13 @@
                             <constraint firstItem="TJ8-sw-kvJ" firstAttribute="baseline" secondItem="AnH-Ph-w7h" secondAttribute="baseline" id="9Iu-FC-1zL"/>
                             <constraint firstItem="TJ8-sw-kvJ" firstAttribute="top" secondItem="JUh-uz-gp2" secondAttribute="bottom" constant="16" id="BJ8-pG-BTx"/>
                             <constraint firstItem="JUh-uz-gp2" firstAttribute="top" secondItem="UfR-PH-BL5" secondAttribute="top" id="DiY-EP-Mp2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TJ8-sw-kvJ" secondAttribute="trailing" constant="48" id="NLV-GV-bBL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TJ8-sw-kvJ" secondAttribute="trailing" constant="65" id="NLV-GV-bBL"/>
                             <constraint firstItem="TJ8-sw-kvJ" firstAttribute="baseline" secondItem="uSe-di-v2K" secondAttribute="baseline" id="Onu-QI-cbe"/>
                             <constraint firstItem="AnH-Ph-w7h" firstAttribute="leading" secondItem="uSe-di-v2K" secondAttribute="trailing" constant="19" id="UuV-n4-VOz"/>
                             <constraint firstAttribute="bottom" secondItem="lic-31-Msz" secondAttribute="bottom" id="W2w-cx-NZy"/>
-                            <constraint firstItem="TJ8-sw-kvJ" firstAttribute="leading" secondItem="pLj-rh-pil" secondAttribute="trailing" constant="23" id="dYl-Dm-hRI"/>
+                            <constraint firstItem="TJ8-sw-kvJ" firstAttribute="leading" secondItem="pLj-rh-pil" secondAttribute="trailing" constant="16" id="dYl-Dm-hRI"/>
                             <constraint firstItem="uSe-di-v2K" firstAttribute="leading" secondItem="UfR-PH-BL5" secondAttribute="leadingMargin" constant="48" id="fhQ-ts-P96"/>
-                            <constraint firstItem="lic-31-Msz" firstAttribute="top" secondItem="pLj-rh-pil" secondAttribute="bottom" id="lLW-Vl-F3A"/>
+                            <constraint firstItem="lic-31-Msz" firstAttribute="top" secondItem="pLj-rh-pil" secondAttribute="bottom" constant="2" id="lLW-Vl-F3A"/>
                             <constraint firstItem="TJ8-sw-kvJ" firstAttribute="baseline" secondItem="pLj-rh-pil" secondAttribute="baseline" id="mbD-fa-pUz"/>
                             <constraint firstAttribute="trailing" secondItem="lic-31-Msz" secondAttribute="trailing" id="xFQ-P8-LOv"/>
                         </constraints>
