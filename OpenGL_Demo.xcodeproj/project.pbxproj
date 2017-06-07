@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F27DF381EE0228F002C6EBB /* shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9F27DF371EE0228F002C6EBB /* shader.fsh */; };
 		9F53D8D51ED8275F00D704E5 /* GLRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53D8D41ED8275F00D704E5 /* GLRender.swift */; };
 		9F53D8D71ED870CB00D704E5 /* GLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53D8D61ED870CB00D704E5 /* GLView.swift */; };
 		9F53D8D91ED873D500D704E5 /* GLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53D8D81ED873D500D704E5 /* GLViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F27DF371EE0228F002C6EBB /* shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.fsh; sourceTree = "<group>"; };
 		9F53D8D31ED8275F00D704E5 /* OpenGL_Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenGL_Demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F53D8D41ED8275F00D704E5 /* GLRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLRender.swift; sourceTree = "<group>"; };
 		9F53D8D61ED870CB00D704E5 /* GLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				9F7BD21C1ECAF61A0055808D /* testSources.png */,
 				9F590B931ECF10930061E261 /* MHTest.h */,
 				9F590B941ECF10930061E261 /* MHTest.m */,
+				9F27DF371EE0228F002C6EBB /* shader.fsh */,
 				9FFD672A1EC4056C003F8B02 /* Assets.xcassets */,
 				9FFD672C1EC4056C003F8B02 /* LaunchScreen.storyboard */,
 				9FFD672F1EC4056C003F8B02 /* Info.plist */,
@@ -140,7 +143,7 @@
 					9FFD671A1EC4056C003F8B02 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5Z3RQE949K;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -168,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F27DF381EE0228F002C6EBB /* shader.fsh in Resources */,
 				9FFD672E1EC4056C003F8B02 /* LaunchScreen.storyboard in Resources */,
 				9FFD672B1EC4056C003F8B02 /* Assets.xcassets in Resources */,
 				9F7BD21D1ECAF61A0055808D /* testSources.png in Resources */,
@@ -316,7 +320,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OpenGL_Demo/OpenGL_Demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -331,7 +336,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "------.OpenGL-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OpenGL_Demo/OpenGL_Demo-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -83,7 +83,7 @@ struct GLRender {
     
     init(_ glLayer: CAEAGLLayer, _ frame: CGRect) {
         self.glLayer = glLayer
-        self.context = EAGLContext(api: .openGLES2)
+        self.context = EAGLContext(api: .openGLES2)!
         self.width = Float(frame.width)
         self.height = Float(frame.height)
         genBuffer()

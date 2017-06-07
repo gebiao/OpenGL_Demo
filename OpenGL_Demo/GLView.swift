@@ -17,8 +17,8 @@ class GLView: UIView {
         
         let eaglLayer = self.layer as! CAEAGLLayer
         eaglLayer.isOpaque = true
-        eaglLayer.drawableProperties = [false: kEAGLDrawablePropertyRetainedBacking,
-                                        kEAGLColorFormatRGBA8: kEAGLDrawablePropertyColorFormat]
+        eaglLayer.drawableProperties = [kEAGLDrawablePropertyRetainedBacking : false,
+                                        kEAGLDrawablePropertyColorFormat : kEAGLColorFormatRGBA8]
         self.render = GLRender.init(eaglLayer, frame)
     }
     
@@ -26,8 +26,8 @@ class GLView: UIView {
         super.init(coder: aDecoder)
         let eaglLayer = self.layer as! CAEAGLLayer
         eaglLayer.isOpaque = true
-        eaglLayer.drawableProperties = [false: kEAGLDrawablePropertyRetainedBacking,
-                                        kEAGLColorFormatRGBA8: kEAGLDrawablePropertyColorFormat]
+        eaglLayer.drawableProperties = [kEAGLDrawablePropertyRetainedBacking : false,
+                                        kEAGLDrawablePropertyColorFormat : kEAGLColorFormatRGBA8]
         self.render = GLRender.init(eaglLayer, frame)
     }
 
